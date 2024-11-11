@@ -1,0 +1,10 @@
+DECLARE
+    monthly_savings NUMBER := 20; 
+    months NUMBER := 5;           
+    total_savings NUMBER;       
+
+BEGIN
+    total_savings := monthly_savings * months;
+
+    DBMS_OUTPUT.PUT_LINE('After ' || months || ' months, you have saved a total of $' || total_savings || '.');
+END;
