@@ -1,0 +1,11 @@
+DECLARE
+    allowance NUMBER := 75;  -- Set your current allowance here
+BEGIN
+    IF allowance >= 100 THEN
+        DBMS_OUTPUT.PUT_LINE('Great job saving! You can buy the item and have enough left for a treat!');
+    ELSIF allowance >= 50 THEN
+        DBMS_OUTPUT.PUT_LINE('You have enough allowance to buy the item!');
+    ELSE
+        DBMS_OUTPUT.PUT_LINE('You do not have enough allowance. Keep saving!');
+    END IF;
+END;
