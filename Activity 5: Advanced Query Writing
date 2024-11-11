@@ -1,0 +1,33 @@
+CREATE TABLE Team_ECHO (
+    player_id NUMBER,
+    player_name VARCHAR(50),
+    role VARCHAR(30)
+);
+
+CREATE TABLE Team_Blacklist (
+    player_id NUMBER,
+    player_name VARCHAR(50),
+    role VARCHAR(30)
+);
+
+INSERT INTO Team_ECHO (player_id, player_name, role)
+VALUES (1, 'Karl', 'Assassin');
+
+INSERT INTO Team_ECHO (player_id, player_name, role)
+VALUES (2, 'Bennyqt', 'Marksman');
+
+INSERT INTO Team_ECHO (player_id, player_name, role)
+VALUES (3, 'Sanford', 'Tank');
+
+INSERT INTO Team_Blacklist (player_id, player_name, role)
+VALUES (1, 'Bennyqt', 'Marksman');
+
+INSERT INTO Team_Blacklist (player_id, player_name, role)
+VALUES (2, 'Sanford', 'Tank');
+
+INSERT INTO Team_Blacklist (player_id, player_name, role)
+VALUES (3, 'OhMyV33nus', 'Support');
+
+SELECT echo.player_id, echo.player_name, echo.role AS echo_role, Blacklist.role AS blacklist_role
+FROM Team_ECHO echo
+JOIN Team_Blacklist Blacklist ON echo.player_id = Blacklist.player_id;
