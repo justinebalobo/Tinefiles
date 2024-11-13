@@ -1,0 +1,30 @@
+CREATE TABLE Teams ( 
+    team_id NUMBER PRIMARY KEY, 
+    team_name VARCHAR2(100)
+);
+
+CREATE TABLE Players ( 
+    player_id NUMBER PRIMARY KEY, 
+    player_name VARCHAR2(50), 
+    player_role VARCHAR2(50), 
+    team_id NUMBER, 
+    FOREIGN KEY (team_id) REFERENCES Teams(team_id) 
+);
+
+INSERT INTO Teams (team_id, team_name) 
+VALUES (1, 'Blacklist International');
+
+INSERT INTO Teams (team_id, team_name) 
+VALUES (2, 'Smart Omega');
+
+INSERT INTO Players (player_id, player_name, player_role, team_id) 
+VALUES (1, 'MarkTzy', 'Jungler', 1);
+
+INSERT INTO Players (player_id, player_name, player_role, team_id) 
+VALUES (2, 'Hadji', 'Gold lane', 1);
+
+INSERT INTO Players (player_id, player_name, player_role, team_id) 
+VALUES (3, 'Ch4knu', 'Tank', 2);
+REFLECTION:The new unique constraint ensures that each value in the specified column is distinct. 
+In your scenario, applying a unique constraint to the rank column in the Players table ensures that no two players can have the same rank. 
+This helps maintain the integrity of your database by preventing duplicate entries and ensuring that each record is unique.
