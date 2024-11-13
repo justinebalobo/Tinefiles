@@ -1,0 +1,10 @@
+ALTER TABLE Teams
+ADD founded_year NUMBER;
+
+ALTER TABLE Players
+ADD rank VARCHAR2(50);
+
+ALTER TABLE Players
+ADD CONSTRAINT unique_rank UNIQUE (rank);
+REFLECTION:Unique constraints and foreign keys maintain data integrity by preventing duplicates and ensuring valid 
+relationships between tables. This enhances the accuracy and usability of the database.
