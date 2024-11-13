@@ -1,0 +1,40 @@
+CREATE TABLE Artists (
+    artist_id NUMBER PRIMARY KEY,
+    artist_name VARCHAR2(100),
+    genre VARCHAR2(50)
+);
+
+CREATE TABLE Albums (
+    album_id NUMBER PRIMARY KEY,
+    album_name VARCHAR2(100),
+    release_year NUMBER,
+    artist_id NUMBER,
+    FOREIGN KEY (artist_id) REFERENCES Artists(artist_id)
+);
+
+INSERT INTO Artists (artist_id, artist_name, genre)
+VALUES (1, 'Taylor Swift', 'Pop');
+
+INSERT INTO Artists (artist_id, artist_name, genre)
+VALUES (2, 'Ed Sheeran', 'Pop');
+
+INSERT INTO Artists (artist_id, artist_name, genre)
+VALUES (3, 'Adele', 'Soul');
+
+INSERT INTO Albums (album_id, album_name, release_year, artist_id)
+VALUES (1, '1989', 2014, 1);
+
+INSERT INTO Albums (album_id, album_name, release_year, artist_id)
+VALUES (2, 'Divide', 2017, 2);
+
+INSERT INTO Albums (album_id, album_name, release_year, artist_id)
+VALUES (3, '25', 2015, 3);
+
+ALTER TABLE Albums
+ADD CONSTRAINT unique_album_name_per_artist UNIQUE (album_name, artist_id);
+
+ALTER TABLE Albums
+ADD genre VARCHAR2(50);
+REFLECTION:By understanding and applying unique constraints and foreign keys, 
+you can ensure that your database remains accurate, reliable, and easy to manage. 
+This is crucial for any application that relies on consistent and precise data.
