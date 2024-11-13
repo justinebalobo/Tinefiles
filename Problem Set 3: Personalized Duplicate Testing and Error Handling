@@ -1,0 +1,8 @@
+INSERT INTO Teams (team_id, team_name) 
+VALUES (2, 'Smart Omega');
+ORA-00001: unique constraint (SQL_EGBFUSUFIGYMTTZGOXBGLTFLR.SYS_C00173001893) violated ORA-06512: at "SYS.DBMS_SQL", line 1721
+REFLECTION:
+The errors you encountered, such as ORA-00001: unique constraint violated, 
+indicate that you're attempting to insert a duplicate value into a column that has a unique constraint. 
+This means the database is enforcing a rule that ensures all values in that column are unique. 
+For example, trying to insert a duplicate team_id or rank results in an error because these columns are defined to have unique values.
