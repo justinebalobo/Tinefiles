@@ -1,0 +1,5 @@
+DELETE FROM Players
+WHERE team_id = 1;
+
+DROP TABLE Teams CASCADE CONSTRAINTS;
+REFLECTION:In scenarios where tables are linked by foreign keys, CASCADE CONSTRAINTS are essential for several reasons:
